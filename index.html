@@ -14,10 +14,47 @@
             font-size: 40px;
             line-height: 70px;
             padding: 0 40px;
-            background-color: #fff;
+            background-color: transparent;
             border: 3px solid black;
             position: relative;
             overflow: hidden;
+            transition: .5s;
+        }
+
+        button:hover {
+            color: rgb(151, 111, 190);
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 10px solid black;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            transition: .5s;
+            z-index: -1;
+        }
+
+        button:hover::before {
+            border-left: 100px solid black;
+        }
+
+        button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -100px;
+            border-right: 100px solid black;
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            z-index: -1;
+            transition: .9s;
+        }
+
+        button:hover::after {
+            right: 0;
         }
     </style>
 </head>
